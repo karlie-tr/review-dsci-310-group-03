@@ -22,9 +22,11 @@ jobs:
     - name: generate report
       run: make
       
-    - name: Commit & Push html version to Github 
-      uses: actions-js/push@master
+    - name: Archive generated PDF file
+      uses: actions/upload-artifact@v2
       with:
-        github_token: ${{ secrets.TOKEN }}
-      
+        name: heart_disease_classification.html
+        path: ./doc/heart_disease_classification.html
+        
+
       
