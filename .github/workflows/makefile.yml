@@ -23,16 +23,10 @@ jobs:
     - name: generate report
       run: make
       
-    - name: Archive generated html file
-      uses: actions/upload-artifact@v2
-      with:
-        name: heart_disease_classification.html
-        path: ./doc/heart_disease_classification.html
-        
     - name: Upload the new version of html into github
       run: |
         git config --global --add safe.directory /__w/review-dsci-310-group-03/review-dsci-310-group-03
-        git add heart_disease_classification.html
+        git add doc/heart_disease_classification.html
         git commit -m "upload html generated from docker container"
         git push 
       
