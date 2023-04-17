@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     container: 
       image: karlietr/dsci-310-group-03:latest
@@ -23,11 +22,9 @@ jobs:
     - name: generate report
       run: make
       
-    - name: Upload the new version of html into github
-      run: |
-        git config --global --add safe.directory /__w/review-dsci-310-group-03/review-dsci-310-group-03
-        git add doc/heart_disease_classification.html
-        git commit -m "upload html generated from docker container"
-        git push 
+    - name: Commit & Push html version to Github 
+      uses: actions-js/push@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
       
       
