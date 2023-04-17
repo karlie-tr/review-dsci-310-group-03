@@ -22,3 +22,9 @@ jobs:
 
     - name: generate report
       run: make
+      
+    - name: Archive generated html file
+      uses: actions/upload-artifact@v2
+      with:
+        name: heart_disease_classification.html
+        path: /doc/heart_disease_classification.html
