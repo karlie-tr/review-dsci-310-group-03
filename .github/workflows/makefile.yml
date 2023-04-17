@@ -31,6 +31,7 @@ jobs:
         
     - name: Upload the new version of html into github
       run: |
+        git config --global --add safe.directory /__w/review-dsci-310-group-03/review-dsci-310-group-03
         git add heart_disease_classification.html
         git commit -m "upload html generated from docker container"
         git push 
