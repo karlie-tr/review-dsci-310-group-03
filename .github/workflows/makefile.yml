@@ -28,3 +28,11 @@ jobs:
       with:
         name: heart_disease_classification.html
         path: /doc/heart_disease_classification.html
+        
+    - name: Upload the new version of html into github
+      run: |
+        git add heart_disease_classification.html
+        git commit -m "upload html generated from docker container"
+        git push 
+      
+      
