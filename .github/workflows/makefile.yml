@@ -1,0 +1,24 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    container: 
+      image: karlietr/dsci-310-group-03:latest
+      ports:
+        - 8787
+      volumes:
+        - /${PWD}:/home/rstudio
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: generate report
+      run: make
