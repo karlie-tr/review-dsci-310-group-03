@@ -27,7 +27,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: heart_disease_classification.html
-        path: /doc/heart_disease_classification.html
+        path: ./doc/heart_disease_classification.html
         
     - name: Upload the new version of html into github
       run: |
